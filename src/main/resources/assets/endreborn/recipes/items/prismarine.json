@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "1", 
+        "0"    
+    ],
+    
+    "key":
+    {
+        "0":
+        {
+            "item": "minecraft:prismarine"
+	    "data": 0
+        },
+
+        "1":
+        {
+            "item": "endreborn:tool_hammer_iron"
+        }
+    },
+    
+    "result":
+    {
+        "item": "minecraft:prismarine_shard",
+        "count": 3
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "343",
+        "202",
+        " 1 "        
+    ],
+    
+    "key":
+    {
+        "0":
+        {
+            "item": "endreborn:tool_sword_endorium"
+        },
+        
+        "1":
+        {
+            "item": "endreborn:item_end_rune"
+        },
+
+	"2":
+        {
+            "item": "endreborn:item_raw_endorium"
+        },
+
+	"3":
+        {
+            "item": "endreborn:item_end_essence"
+        },
+
+	"4":
+        {
+            "item": "endreborn:item_ender_string"
+        }
+    },
+    
+    "result":
+    {
+        "item": "endreborn:ender_sword",
+        "count": 1
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "1", 
+        "0"    
+    ],
+    
+    "key":
+    {
+        "0":
+        {
+            "item": "minecraft:rotten_flesh"
+        },
+
+        "1":
+        {
+            "item": "minecraft:blaze_powder"
+        }
+    },
+    
+    "result":
+    {
+        "item": "endreborn:food_ender_flesh",
+        "count": 1
+    }
+}

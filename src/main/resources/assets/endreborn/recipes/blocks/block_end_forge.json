@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "222",
+	" 0 ", 
+        "101"     
+    ],
+    
+    "key":
+    {
+        "0":
+        {
+            "item": "endreborn:block_end_stone_pillar"
+        },
+	"1":
+        {
+            "item": "minecraft:purpur_block"
+        },
+	"2":
+        {
+            "item": "endreborn:block_end_magma"
+        }
+    },
+    
+    "result":
+    {
+        "item": "endreborn:block_end_forge",
+        "count": 1
+    }
+}

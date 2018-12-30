@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "00",
+	"00"      
+    ],
+    
+    "key":
+    {
+        "0":
+        {
+            "item": "endreborn:item_raw_endorium"
+        }
+    },
+    
+    "result":
+    {
+        "item": "endreborn:item_ingot_endorium",
+        "count": 1
+    }
+}

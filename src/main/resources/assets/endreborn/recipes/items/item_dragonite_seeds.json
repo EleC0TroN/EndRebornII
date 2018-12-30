@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "100", 
+        "000",
+	"000"    
+    ],
+    
+    "key":
+    {
+        "0":
+        {
+            "item": "minecraft:wheat_seeds"
+        },
+
+        "1":
+        {
+            "item": "minecraft:dragon_breath"
+        }
+    },
+    
+    "result":
+    {
+        "item": "endreborn:item_dragonite_seeds",
+        "count": 8
+    }
+}

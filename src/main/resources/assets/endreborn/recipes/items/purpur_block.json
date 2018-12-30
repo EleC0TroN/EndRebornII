@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "1", 
+        "0"    
+    ],
+    
+    "key":
+    {
+        "0":
+        {
+            "item": "minecraft:purpur_block"
+        },
+
+        "1":
+        {
+            "item": "endreborn:tool_hammer_iron"
+        }
+    },
+    
+    "result":
+    {
+        "item": "minecraft:chorus_fruit_popped",
+        "count": 1
+    }
+}

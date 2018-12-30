@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "1", 
+        "0"    
+    ],
+    
+    "key":
+    {
+        "0":
+        {
+            "item": "minecraft:brick_block"
+        },
+
+        "1":
+        {
+            "item": "endreborn:tool_hammer_iron"
+        }
+    },
+    
+    "result":
+    {
+        "item": "minecraft:brick",
+        "count": 4
+    }
+}
