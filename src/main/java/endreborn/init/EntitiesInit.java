@@ -2,14 +2,8 @@ package endreborn.init;
 
 import endreborn.EndReborn;
 import endreborn.Reference;
-import endreborn.mod.entity.EntityWatcher;
-import endreborn.mod.entity.render.RenderAngryEnder;
-import endreborn.mod.entity.render.RenderEGuard;
-import endreborn.mod.entity.render.RenderLord;
-import endreborn.mod.entity.render.RenderWatcher;
-import endreborn.mod.entity.EntityAngryEnder;
-import endreborn.mod.entity.EntityEGuard;
-import endreborn.mod.entity.EntityLord;
+import endreborn.mod.entity.*;
+import endreborn.mod.entity.render.*;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityEndermite;
 import net.minecraft.init.Biomes;
@@ -29,6 +23,7 @@ public class EntitiesInit {
         EntityRegistry.addSpawn(EntityEndermite.class, 3, 0, 1, EnumCreatureType.MONSTER, Biomes.SKY);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "endlord"), EntityLord.class, "endlord", id++, EndReborn.instance, 64, 3, false, 461076, 681365);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "angry_enderman"), EntityAngryEnder.class, "angry_enderman", id++, EndReborn.instance, 64, 3, false, 461076, 660033);
+        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "chronologist"), EntityChronologist.class, "chronologist", id++, EndReborn.instance, 64, 3, false, 461076, 13680725);
 
     }
     
@@ -38,6 +33,7 @@ public class EntitiesInit {
         RenderingRegistry.registerEntityRenderingHandler(EntityWatcher.class, RenderWatcher.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityLord.class, RenderLord.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityAngryEnder.class, RenderAngryEnder.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityChronologist.class, RenderChronologist.FACTORY);
     }
 }
 

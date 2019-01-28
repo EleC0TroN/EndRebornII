@@ -1,13 +1,7 @@
 package endreborn.handlers;
 
-import endreborn.mod.entity.EntityAngryEnder;
-import endreborn.mod.entity.EntityEGuard;
-import endreborn.mod.entity.EntityLord;
-import endreborn.mod.entity.EntityWatcher;
-import endreborn.mod.entity.render.RenderAngryEnder;
-import endreborn.mod.entity.render.RenderEGuard;
-import endreborn.mod.entity.render.RenderLord;
-import endreborn.mod.entity.render.RenderWatcher;
+import endreborn.mod.entity.*;
+import endreborn.mod.entity.render.*;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
@@ -49,5 +43,13 @@ public class RenderHandler
 		return new RenderAngryEnder(manager);
 	}
 	});
+	RenderingRegistry.registerEntityRenderingHandler(EntityChronologist.class, new IRenderFactory<EntityChronologist>()
+	{
+		@Override
+			public Render<? super EntityChronologist> createRenderFor(RenderManager manager)
+			{
+				return new RenderChronologist(manager);
+			}
+		});
 }
 }

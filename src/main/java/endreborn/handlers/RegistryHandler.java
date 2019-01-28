@@ -1,8 +1,10 @@
 package endreborn.handlers;
 
+import endreborn.EndReborn;
 import endreborn.init.BlockInit;
 import endreborn.init.EntitiesInit;
 import endreborn.init.ItemInit;
+import endreborn.utils.EndSound;
 import endreborn.utils.IHasModel;
 import endreborn.world.OreGen;
 import endreborn.world.WorldGenCustomStructures;
@@ -12,8 +14,10 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
@@ -30,6 +34,7 @@ public class RegistryHandler
 	public static void onBlockRegister(RegistryEvent.Register<Block> event) 
 	{
 		event.getRegistry().registerAll(BlockInit.BLOCKS.toArray(new Block[0]));
+		TileHandler.registerTileEntities();
 	}
 	
 	@SubscribeEvent
@@ -56,7 +61,11 @@ public class RegistryHandler
 	
 		MinecraftForge.EVENT_BUS.register(new EventHandler());
 		GameRegistry.registerWorldGenerator(new OreGen(), 0);
+
+
+		SoundHandler.preInit();
     	EntitiesInit.init();
+    	TileHandler.registerTileEntities();
 		GameRegistry.registerWorldGenerator(new WorldGenCustomStructures(), 0);
 		ConfigHandler.registerConfig(event);
     
@@ -66,9 +75,14 @@ public class RegistryHandler
 		}
 		
 	}
-	public static void initRegistries()
+	public static void initRegistries(FMLInitializationEvent event)
 	{
-	
+
+		ChestsHandler.init();
+		NetworkRegistry.INSTANCE.registerGuiHandler(EndReborn.instance, new GuiHandler());
+		OreDictionaryHandler.registerOres();
 	}
+
+
 }
 

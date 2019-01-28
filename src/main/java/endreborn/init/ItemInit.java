@@ -5,6 +5,7 @@ import java.util.List;
 
 
 import endreborn.Reference;
+import endreborn.handlers.SoundHandler;
 import endreborn.mod.armor.ArmourBase;
 import endreborn.mod.armor.ArmourDModel;
 import endreborn.mod.armor.ArmourModel;
@@ -12,10 +13,7 @@ import endreborn.mod.food.FoodChorusSoup;
 import endreborn.mod.food.FoodDragonBerries;
 import endreborn.mod.food.FoodEnderFlesh;
 import endreborn.mod.items.*;
-import endreborn.mod.tools.ToolHoe;
-import endreborn.mod.tools.ToolPickaxe;
-import endreborn.mod.tools.ToolShovel;
-import endreborn.mod.tools.ToolSword;
+import endreborn.mod.tools.*;
 import endreborn.mod.tools.axes.EndoriumAxe;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -55,7 +53,11 @@ public class ItemInit
     public static final Item DRAGONITE_TEA = new ItemDragoniteTea("item_dragonite_tea");
     public static final Item ANGEL_FEATHER = new ItemBase("item_angel_feather");
     public static final Item DRAGON_SCALES = new ItemBase("dragon_scales");
-    
+    public static final Item DEATH_ESSENCE = new ItemBase("death_essence");
+    public static final Item ASH = new ItemBase("ash");
+    public static final Item CATALYST = new ItemCatalyst("catalyst");
+    public static final Item RECORD = new ItemEndRecord("end_record", SoundHandler.THE_VOID);
+
     //Tools
     public static final Item PICKAXE_ENDORIUM = new ToolPickaxe("tool_pickaxe_endorium", TOOL_ENDORIUM);
     public static final Item SWORD_ENDORIUM = new ToolSword("tool_sword_endorium", TOOL_ENDORIUM);
@@ -71,7 +73,8 @@ public class ItemInit
     public static final Item HOE_WOLFRAMIUM = new ToolHoe("tool_hoe_wolframium", TOOL_WOLFRAMIUM);
     public static final Item AXE_WOLFRAMIUM = new EndoriumAxe("tool_axe_wolframium", TOOL_WOLFRAMIUM);
     public static final Item SHOVEL_WOLFRAMIUM = new ToolShovel("tool_shovel_wolframium", TOOL_WOLFRAMIUM);
-    
+    public static final Item ENTROPY_WAND = new ToolEntropyWand("entropy_wand", TOOL_MAGNIFIER);
+
     //Armors
     public static final Item CHESTPLATE_OBSIDIAN = new ArmourBase("armour_chestplate_obsidian", ARMOUR_OBSIDIAN, 1, EntityEquipmentSlot.CHEST);
     public static final Item LEGGINGS_OBSIDIAN = new ArmourBase("armour_leggings_obsidian", ARMOUR_OBSIDIAN, 2, EntityEquipmentSlot.LEGS);

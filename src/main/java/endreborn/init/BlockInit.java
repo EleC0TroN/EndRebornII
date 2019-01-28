@@ -18,7 +18,7 @@ public class BlockInit
 	
 	public static final Block BLOCK_ENDORIUM = new BlockEndBase("block_endorium", Material.IRON);
 	public static final Block END_STONE_SMOOTH = new BlockEndBase("block_end_stone_smooth", Material.ROCK);
-	public static final Block END_STONE_PILLAR = new BlockEndBase("block_end_stone_pillar", Material.ROCK);
+	public static final Block END_STONE_PILLAR = new BlockPillar("block_end_stone_pillar", Material.ROCK);
 	public static final Block PURPUR_LAMP = new LampBase("block_purpur_lamp", Material.ROCK);
 	public static final Block ENDER_FLOWER = new EnderCropBase("crop_ender_flower");
 	public static final Block DRAGON_BUSH = new DragonBush("crop_dragonite");
@@ -32,6 +32,12 @@ public class BlockInit
 	public static final Block BLOCK_RUNE = new BlockRune("block_rune", Material.ROCK);
 	public static final Block BLOCK_END_MAGMA = new BlockEndMagma("block_end_magma");
 	public static final Block BLOCK_END_FORGE = new BlockEndForge("block_end_forge");
+	public static final Block DRAGON_ESSENCE = new BlockDragonEssence("dragon_essence");
+	public static final Block BLOCK_ASH = new BlockAsh("ash_block", Material.SAND);
+	public static final Block OVER_PORTAL = new BlockOverPortal("over_portal", Material.PORTAL);
+	public static final Block TECH_PORTAL = new BlockPillar("tech_portal", Material.ROCK);
+
+	public static final Block BLOCK_E_USER = new BlockEntropyUser("entropy_user");
 	
 	public static final Block STAIRS_END_BRICKS = new BlockStairsBase("e_end_bricks_stairs", Blocks.END_BRICKS);
 	public static final Block STAIRS_SMOOTH_END_STONE = new BlockStairsBase("smooth_end_stone_stairs", BlockInit.END_STONE_SMOOTH);
