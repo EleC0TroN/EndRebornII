@@ -3,6 +3,7 @@ package endreborn.mod.tools;
 import endreborn.EndReborn;
 import endreborn.init.ItemInit;
 import endreborn.utils.IHasModel;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 
 public class ToolSword extends ItemSword implements IHasModel

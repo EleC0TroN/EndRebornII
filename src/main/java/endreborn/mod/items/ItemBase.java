@@ -12,8 +12,8 @@ public class ItemBase extends Item implements IHasModel
     	setUnlocalizedName(name);
     	setRegistryName(name);
     	setCreativeTab(EndReborn.endertab);
-    	
-    	ItemInit.ITEMS.add(this);
+
+		ItemInit.ITEMS.add(this);
     }
 
 	@Override
