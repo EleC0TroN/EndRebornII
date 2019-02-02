@@ -17,7 +17,7 @@ public class ChestsHandler {
     private static final List<String> CHEST_TABLES = ImmutableList.of("abandoned_mineshaft", "desert_pyramid", "end_city_treasure", "igloo_chest", "jungle_temple", "nether_bridge", "simple_dungeon", "stronghold_corridor", "stronghold_crossing", "stronghold_library", "village_blacksmith");
 
     public static void init() {
-        if(ConfigHandler.chestLoot) {
+        if(ConfigsHandler.GENERAL.chestLoot) {
             for(String s : CHEST_TABLES) {
                 LootTableList.register(new ResourceLocation(Reference.MODID, "inject/chests/" + s));
             }
@@ -29,7 +29,7 @@ public class ChestsHandler {
         String chests_prefix = "minecraft:chests/";
         String name = evt.getName().toString();
 
-        if((ConfigHandler.chestLoot && name.startsWith(chests_prefix) && CHEST_TABLES.contains(name.substring(chests_prefix.length())))) {
+        if((ConfigsHandler.GENERAL.chestLoot && name.startsWith(chests_prefix) && CHEST_TABLES.contains(name.substring(chests_prefix.length())))) {
             String file = name.substring("minecraft:".length());
             evt.getTable().addPool(getInjectPool(file));
         }

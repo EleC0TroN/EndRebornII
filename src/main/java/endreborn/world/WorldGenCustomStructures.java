@@ -3,11 +3,10 @@ package endreborn.world;
 import java.util.ArrayList;
 import java.util.Random;
 
-import endreborn.handlers.ConfigHandler;
+import endreborn.handlers.ConfigsHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
@@ -32,30 +31,30 @@ public class WorldGenCustomStructures implements IWorldGenerator
 		switch(world.provider.getDimension())
 		{
 			case 1:
-				if(ConfigHandler.spawnLormyte)
+				if(ConfigsHandler.GENERAL.spawnLormyte)
 				{
 				generateStructure2(new WorldGenStructure("lormyte_crystal"), world, rand, chunkX, chunkZ, 50, Blocks.END_STONE, BiomeEnd.class);
 				}
-				generateStructure4(new WorldGenStructure("over_portal"), world, rand, chunkX, chunkZ, ConfigHandler.portalRare, Blocks.AIR, BiomeEnd.class);
+				generateStructure4(new WorldGenStructure("over_portal"), world, rand, chunkX, chunkZ, ConfigsHandler.BALANCE.portalRare, Blocks.AIR, BiomeEnd.class);
 				break;
 
 			case 0:
-				if(ConfigHandler.spawnEndIsland)
+				if(ConfigsHandler.GENERAL.spawnEndIsland)
 				{
-				generateStructure(new WorldGenStructure("end_island"), world, rand, chunkX, chunkZ, ConfigHandler.islandRare, Blocks.AIR, BiomePlains.class);
-				generateStructure(new WorldGenStructure("end_island"), world, rand, chunkX, chunkZ, ConfigHandler.islandRare, Blocks.AIR, BiomeForest.class);
-				generateStructure(new WorldGenStructure("end_island"), world, rand, chunkX, chunkZ, ConfigHandler.islandRare, Blocks.AIR, BiomeDesert.class);
-				generateStructure(new WorldGenStructure("end_island"), world, rand, chunkX, chunkZ, ConfigHandler.islandRare, Blocks.AIR, BiomeOcean.class);
-				generateStructure(new WorldGenStructure("end_island"), world, rand, chunkX, chunkZ, ConfigHandler.islandRare, Blocks.AIR, BiomeSavanna.class);
+				generateStructure(new WorldGenStructure("end_island"), world, rand, chunkX, chunkZ, ConfigsHandler.BALANCE.islandRare, Blocks.AIR, BiomePlains.class);
+				generateStructure(new WorldGenStructure("end_island"), world, rand, chunkX, chunkZ, ConfigsHandler.BALANCE.islandRare, Blocks.AIR, BiomeForest.class);
+				generateStructure(new WorldGenStructure("end_island"), world, rand, chunkX, chunkZ, ConfigsHandler.BALANCE.islandRare, Blocks.AIR, BiomeDesert.class);
+				generateStructure(new WorldGenStructure("end_island"), world, rand, chunkX, chunkZ, ConfigsHandler.BALANCE.islandRare, Blocks.AIR, BiomeOcean.class);
+				generateStructure(new WorldGenStructure("end_island"), world, rand, chunkX, chunkZ, ConfigsHandler.BALANCE.islandRare, Blocks.AIR, BiomeSavanna.class);
 				}
-				if(ConfigHandler.spawnObservatory)
+				if(ConfigsHandler.GENERAL.spawnObservatory)
 				{
 				generateStructure3(new WorldGenStructure("observ"), world, rand, chunkX, chunkZ, 500, Blocks.STONE, BiomeSwamp.class);
 				generateStructure3(new WorldGenStructure("observ"), world, rand, chunkX, chunkZ, 500, Blocks.STONE, BiomeForest.class);
 				generateStructure3(new WorldGenStructure("observ"), world, rand, chunkX, chunkZ, 600, Blocks.STONE, BiomeDesert.class);
 				generateStructure3(new WorldGenStructure("observ"), world, rand, chunkX, chunkZ, 600, Blocks.STONE, BiomeOcean.class);
 				}
-				generateStructure5(new WorldGenStructure("over_portal_2"), world, rand, chunkX, chunkZ, ConfigHandler.portalRare, Blocks.GRASS, BiomePlains.class);
+				generateStructure5(new WorldGenStructure("over_portal_2"), world, rand, chunkX, chunkZ, ConfigsHandler.BALANCE.portalRare, Blocks.GRASS, BiomePlains.class);
 				break;
 
 			case -1:

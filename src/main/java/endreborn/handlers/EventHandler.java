@@ -1,5 +1,6 @@
 package endreborn.handlers;
 
+import endreborn.Reference;
 import endreborn.init.BlockInit;
 import endreborn.init.ItemInit;
 import endreborn.mod.entity.EntityAngryEnder;
@@ -23,11 +24,15 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.*;
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -189,7 +194,7 @@ public class EventHandler
     public static void onPlayerPosition(LivingHurtEvent event) 
 	{
         if(event.getEntityLiving() instanceof EntityPlayerMP && event.getEntityLiving().dimension == 1 
-        		&& ConfigHandler.teleporterEnd && event.getEntityLiving().getPosition().getY() <= -6) 
+        		&& ConfigsHandler.GENERAL.teleporterEnd && event.getEntityLiving().getPosition().getY() <= -6)
         {
         	EntityPlayerMP player = (EntityPlayerMP) event.getEntityLiving();
         	PlayerList playerList = player.getEntityWorld().getMinecraftServer().getPlayerList();
@@ -200,7 +205,15 @@ public class EventHandler
         					player.getPosition().getX(), 250, player.getPosition().getZ()));
         }
         }
+	@SubscribeEvent
+	public static void onConfigChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
+	{
+		if (event.getModID().equals(Reference.MODID))
+		{
+			ConfigManager.sync(Reference.MODID, Config.Type.INSTANCE);
 
+		}
+	}
 	@SubscribeEvent
 	public static void portalTeleport(TickEvent.PlayerTickEvent event) {
 		EntityPlayer entity = event.player;

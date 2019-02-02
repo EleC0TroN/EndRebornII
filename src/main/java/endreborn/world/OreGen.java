@@ -2,8 +2,8 @@ package endreborn.world;
 
 import java.util.Random;
 
+import endreborn.handlers.ConfigsHandler;
 import endreborn.init.BlockInit;
-import endreborn.handlers.ConfigHandler;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -39,46 +39,46 @@ public class OreGen implements IWorldGenerator
 			break;
 			
 		case 0:
-			if(ConfigHandler.spawnEssenceOre)
+			if(ConfigsHandler.GENERAL.spawnEssenceOre)
 			{
 			runGenerator(ore_over_essence, world, random, chunkX, chunkZ, 50, 0, 256);
 			}
-			if(ConfigHandler.spawnWolframiumOre)
+			if(ConfigsHandler.GENERAL.spawnWolframiumOre)
 			{
 			runGenerator(ore_wolframium, world, random, chunkX, chunkZ, 25, 0, 48);
 			}
 			break;
 		case 7:
-			if(ConfigHandler.spawnEssenceOre)
+			if(ConfigsHandler.GENERAL.spawnEssenceOre)
 			{
 			runGenerator(ore_over_essence, world, random, chunkX, chunkZ, 50, 0, 256);
 			}
-			if(ConfigHandler.spawnWolframiumOre)
+			if(ConfigsHandler.GENERAL.spawnWolframiumOre)
 			{
 			runGenerator(ore_wolframium, world, random, chunkX, chunkZ, 25, 0, 48);
 			}
 			break;
 			case 6:
-				if(ConfigHandler.spawnEssenceOre)
+				if(ConfigsHandler.GENERAL.spawnEssenceOre)
 				{
 					runGenerator(ore_over_essence, world, random, chunkX, chunkZ, 50, 0, 256);
 				}
-				if(ConfigHandler.spawnWolframiumOre)
+				if(ConfigsHandler.GENERAL.spawnWolframiumOre)
 				{
 					runGenerator(ore_wolframium, world, random, chunkX, chunkZ, 25, 0, 48);
 				}
 				break;
 			
 		case 1:
-			if(ConfigHandler.spawnEssenceOre)
+			if(ConfigsHandler.GENERAL.spawnEssenceOre)
 			{
 			runGenerator(ore_end_essence, world, random, chunkX, chunkZ, 100, 0, 256);
 			}
-			if(ConfigHandler.decoratorEnd)
+			if(ConfigsHandler.GENERAL.decoratorEnd)
 			{
 			runGenerator(end_magma, world, random, chunkX, chunkZ, 1, 0, 256);
 			}
-			if(ConfigHandler.decoratorEnd)
+			if(ConfigsHandler.GENERAL.decoratorEnd)
 			{
 			runGenerator(end_entropy, world, random, chunkX, chunkZ, 2, 0, 22);
 			}

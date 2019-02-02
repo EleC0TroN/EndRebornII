@@ -20,6 +20,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
+import thaumcraft.api.aspects.AspectRegistryEvent;
 
 @EventBusSubscriber
 public class RegistryHandler 
@@ -62,12 +63,10 @@ public class RegistryHandler
 		MinecraftForge.EVENT_BUS.register(new EventHandler());
 		GameRegistry.registerWorldGenerator(new OreGen(), 0);
 
-
 		SoundHandler.preInit();
     	EntitiesInit.init();
     	TileHandler.registerTileEntities();
 		GameRegistry.registerWorldGenerator(new WorldGenCustomStructures(), 0);
-		ConfigHandler.registerConfig(event);
     
 		if(event.getSide() == Side.CLIENT)
 		{
@@ -77,8 +76,8 @@ public class RegistryHandler
 	}
 	public static void initRegistries(FMLInitializationEvent event)
 	{
-
 		ChestsHandler.init();
+		BannerHandler.init();
 		NetworkRegistry.INSTANCE.registerGuiHandler(EndReborn.instance, new GuiHandler());
 		OreDictionaryHandler.registerOres();
 	}

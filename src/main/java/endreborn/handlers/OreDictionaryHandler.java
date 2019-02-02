@@ -9,6 +9,7 @@ public class OreDictionaryHandler {
         OreDictionary.registerOre("ingotWolfram", ItemInit.INGOT_WOLFRAMIUM);
         OreDictionary.registerOre("dustAsh", ItemInit.ASH);
         OreDictionary.registerOre("dustObsidian", ItemInit.CATALYST);
+        OreDictionary.registerOre("hammer", ItemInit.HAMMER_IRON);
     }
 
 }
