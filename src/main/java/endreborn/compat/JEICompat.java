@@ -34,7 +34,7 @@ public class JEICompat implements IModPlugin
         IRecipeTransferRegistry recipeTransfer = registry.getRecipeTransferRegistry();
 
         registry.addRecipes(EUserMaker.getRecipes(jeiHelpers), JEICategories.USER);
-        registry.addRecipeClickArea(GuiEUser.class, 109, 14, 24, 17, JEICategories.USER);
+        registry.addRecipeClickArea(GuiEUser.class, 109, 43, 24, 17, JEICategories.USER);
         recipeTransfer.addRecipeTransferHandler(ContainerEntropyUser.class, JEICategories.USER, 0, 1, 3, 36);
 
     }

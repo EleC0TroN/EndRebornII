@@ -30,8 +30,8 @@ public class EUserCategory extends EUserAbstract<EUserRecipe>
     @Override
     public void drawExtras(Minecraft minecraft)
     {
-        animatedFlame.draw(minecraft, 64, 42);
-        animatedArrow.draw(minecraft, 105, 10);
+        animatedFlame.draw(minecraft, 64, 13);
+        animatedArrow.draw(minecraft, 106, 39);
     }
 
     @Override
@@ -55,9 +55,9 @@ public class EUserCategory extends EUserAbstract<EUserRecipe>
     public void setRecipe(IRecipeLayout recipeLayout, EUserRecipe recipeWrapper, IIngredients ingredients)
     {
         IGuiItemStackGroup stacks = recipeLayout.getItemStacks();
-        stacks.init(input1, true, 64, 9);
-        stacks.init(input2, true, 86, 9);
-        stacks.init(output, false, 136, 9);
+        stacks.init(input1, true, 64, 38);
+        stacks.init(input2, true, 86, 38);
+        stacks.init(output, false, 136, 38);
         stacks.set(ingredients);
     };
 }

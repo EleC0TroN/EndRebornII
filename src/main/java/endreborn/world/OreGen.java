@@ -16,7 +16,7 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class OreGen implements IWorldGenerator
 {
-	private WorldGenerator ore_end_essence, ore_over_essence, ore_wolframium, end_magma, end_entropy;
+	private WorldGenerator ore_end_essence, end_glow, ore_over_essence, ore_wolframium, end_magma, end_entropy;
 	
 	public OreGen() 
 	{
@@ -25,6 +25,7 @@ public class OreGen implements IWorldGenerator
 		ore_wolframium = new WorldGenMinable(BlockInit.ORE_WOLFRAMIUM.getDefaultState(), 4, BlockMatcher.forBlock(Blocks.STONE));
 		end_magma = new WorldGenMinable(BlockInit.BLOCK_END_MAGMA.getDefaultState(), 30, BlockMatcher.forBlock(Blocks.END_STONE));
 		end_entropy = new WorldGenMinable(BlockInit.ENTROPY_END_STONE.getDefaultState(), 10, BlockMatcher.forBlock(Blocks.END_STONE));
+		end_glow = new WorldGenMinable(BlockInit.END_GLOW.getDefaultState(), 30, BlockMatcher.forBlock(Blocks.END_STONE));
 	}
 	
 	@Override
@@ -41,47 +42,52 @@ public class OreGen implements IWorldGenerator
 		case 0:
 			if(ConfigsHandler.GENERAL.spawnEssenceOre)
 			{
-			runGenerator(ore_over_essence, world, random, chunkX, chunkZ, 50, 0, 256);
+			runGenerator(ore_over_essence, world, random, chunkX, chunkZ, ConfigsHandler.BALANCE.essenceRareOver, 0, 256);
 			}
 			if(ConfigsHandler.GENERAL.spawnWolframiumOre)
 			{
-			runGenerator(ore_wolframium, world, random, chunkX, chunkZ, 25, 0, 48);
+			runGenerator(ore_wolframium, world, random, chunkX, chunkZ, ConfigsHandler.BALANCE.wolframiumRare, 0, 48);
+			}
+			if(ConfigsHandler.GENERAL.decoratorEnd)
+			{
+				runGenerator(end_glow, world, random, chunkX, chunkZ, 1, 0, 256);
 			}
 			break;
 		case 7:
 			if(ConfigsHandler.GENERAL.spawnEssenceOre)
 			{
-			runGenerator(ore_over_essence, world, random, chunkX, chunkZ, 50, 0, 256);
+			runGenerator(ore_over_essence, world, random, chunkX, chunkZ, ConfigsHandler.BALANCE.essenceRareOver, 0, 256);
 			}
 			if(ConfigsHandler.GENERAL.spawnWolframiumOre)
 			{
-			runGenerator(ore_wolframium, world, random, chunkX, chunkZ, 25, 0, 48);
+			runGenerator(ore_wolframium, world, random, chunkX, chunkZ, ConfigsHandler.BALANCE.wolframiumRare, 0, 48);
 			}
 			break;
 			case 6:
 				if(ConfigsHandler.GENERAL.spawnEssenceOre)
 				{
-					runGenerator(ore_over_essence, world, random, chunkX, chunkZ, 50, 0, 256);
+					runGenerator(ore_over_essence, world, random, chunkX, chunkZ, ConfigsHandler.BALANCE.essenceRareOver, 0, 256);
 				}
 				if(ConfigsHandler.GENERAL.spawnWolframiumOre)
 				{
-					runGenerator(ore_wolframium, world, random, chunkX, chunkZ, 25, 0, 48);
+					runGenerator(ore_wolframium, world, random, chunkX, chunkZ, ConfigsHandler.BALANCE.wolframiumRare, 0, 48);
 				}
 				break;
 			
 		case 1:
 			if(ConfigsHandler.GENERAL.spawnEssenceOre)
 			{
-			runGenerator(ore_end_essence, world, random, chunkX, chunkZ, 100, 0, 256);
+				runGenerator(ore_end_essence, world, random, chunkX, chunkZ, ConfigsHandler.BALANCE.essenceRareEnd, 0, 256);
 			}
 			if(ConfigsHandler.GENERAL.decoratorEnd)
 			{
-			runGenerator(end_magma, world, random, chunkX, chunkZ, 1, 0, 256);
+				runGenerator(end_magma, world, random, chunkX, chunkZ, 1, 0, 256);
 			}
 			if(ConfigsHandler.GENERAL.decoratorEnd)
 			{
-			runGenerator(end_entropy, world, random, chunkX, chunkZ, 2, 0, 22);
+				runGenerator(end_entropy, world, random, chunkX, chunkZ, 2, 0, 22);
 			}
+
 		}
 	}
 	

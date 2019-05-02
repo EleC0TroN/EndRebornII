@@ -14,7 +14,7 @@ public class EndoriumTrait extends AbstractTrait {
 
     @Override
     public void onHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damage, boolean isCritical) {
-        if (isCritical || random.nextInt(10) == 0)
-            player.addPotionEffect(new PotionEffect(MobEffects.HASTE, 60, isCritical ? 0 : 2));
+        if (isCritical)
+            player.addPotionEffect(new PotionEffect(MobEffects.HASTE, 120, isCritical ? 0 : 2));
     }
 }
