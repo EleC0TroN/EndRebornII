@@ -14,7 +14,7 @@ import java.util.List;
 
 @Mod.EventBusSubscriber(modid = Reference.MODID)
 public class ChestsHandler {
-    private static final List<String> CHEST_TABLES = ImmutableList.of("abandoned_mineshaft", "desert_pyramid", "end_city_treasure", "igloo_chest", "jungle_temple", "nether_bridge", "simple_dungeon", "stronghold_corridor", "stronghold_crossing", "stronghold_library", "village_blacksmith");
+    private static final List<String> CHEST_TABLES = ImmutableList.of("abandoned_mineshaft", "desert_pyramid", "end_city_treasure", "jungle_temple", "nether_bridge", "village_blacksmith");
 
     public static void init() {
         if(ConfigsHandler.GENERAL.chestLoot) {

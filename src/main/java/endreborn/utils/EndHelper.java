@@ -83,4 +83,5 @@ public class EndHelper
 		for(EntityPlayer player : players)
 			player.sendMessage(new TextComponentString(name + ": " + text));
 	}
+
 }

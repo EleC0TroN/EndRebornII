@@ -14,6 +14,10 @@ public class SoundHandler {
     public static final List<SoundEvent> SOUNDS = new ArrayList<>();
 
     public static final EndSound THE_VOID = reg("the_void");
+    public static final EndSound RAGE_1 = reg("rage_1");
+    public static final EndSound RAGE_2 = reg("rage_2");
+    public static final EndSound RAGE_3 = reg("rage_3");
+    public static final EndSound RAGE_4 = reg("rage_4");
 
     private SoundHandler() {
     }

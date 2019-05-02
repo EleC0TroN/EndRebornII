@@ -1,6 +1,7 @@
 package endreborn.init;
 
 import endreborn.mod.enchants.EnchantECore;
+import endreborn.mod.enchants.EnchantEnder;
 import endreborn.mod.enchants.EnchantSCore;
 import endreborn.Reference;
 import net.minecraft.enchantment.Enchantment;
@@ -12,7 +13,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 public class EnchantInit {
 	public static final Enchantment ender_core = new EnchantECore();
-
+    public static final Enchantment ender_killer = new EnchantEnder();
 	public static final Enchantment shulker_core = new EnchantSCore();
 	
 	@Mod.EventBusSubscriber(modid = Reference.MODID)
@@ -27,14 +28,15 @@ public class EnchantInit {
             final IForgeRegistry<Enchantment> registry = event.getRegistry();
             
             registry.register(ender_core);
+            registry.register(ender_killer);
             registry.register(shulker_core);
         }
     }
 	
-	public static final Enchantment[] helmetEnchants = new Enchantment[] {Enchantments.THORNS, Enchantments.AQUA_AFFINITY, ender_core};
-	public static final Enchantment[] chestplateEnchants = new Enchantment[] {Enchantments.THORNS, ender_core};
-	public static final Enchantment[] leggingsEnchants = new Enchantment[] {Enchantments.THORNS, ender_core};
-	public static final Enchantment[] bootsEnchants = new Enchantment[] {Enchantments.THORNS, Enchantments.FROST_WALKER, Enchantments.DEPTH_STRIDER, ender_core};
+	public static final Enchantment[] helmetEnchants = new Enchantment[] {ender_core};
+	public static final Enchantment[] chestplateEnchants = new Enchantment[] {ender_core};
+	public static final Enchantment[] leggingsEnchants = new Enchantment[] {ender_core};
+	public static final Enchantment[] bootsEnchants = new Enchantment[] {ender_core};
 	
-	public static final Enchantment[] swordEnchants = new Enchantment[] {Enchantments.FIRE_ASPECT, shulker_core};
+	public static final Enchantment[] swordEnchants = new Enchantment[] {shulker_core, ender_killer};
 }

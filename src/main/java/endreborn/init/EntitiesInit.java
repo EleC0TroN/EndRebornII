@@ -2,6 +2,7 @@ package endreborn.init;
 
 import endreborn.EndReborn;
 import endreborn.Reference;
+import endreborn.handlers.ConfigsHandler;
 import endreborn.mod.entity.*;
 import endreborn.mod.entity.render.*;
 import net.minecraft.entity.EnumCreatureType;
@@ -18,9 +19,9 @@ public class EntitiesInit {
     public static void init() {
         int id = 1;
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "endguard"), EntityEGuard.class, "endguard", id++, EndReborn.instance, 64, 3, false, 9654933, 11237052);
-        EntityRegistry.addSpawn(EntityEGuard.class, 3, 0, 1, EnumCreatureType.MONSTER, Biomes.SKY);
+        EntityRegistry.addSpawn(EntityEGuard.class, ConfigsHandler.BALANCE.guardRare, 0, 1, EnumCreatureType.MONSTER, Biomes.SKY);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "watcher"), EntityWatcher.class, "watcher", id++, EndReborn.instance, 64, 3, false, 461076, 2236447);
-        EntityRegistry.addSpawn(EntityEndermite.class, 3, 0, 1, EnumCreatureType.MONSTER, Biomes.SKY);
+        EntityRegistry.addSpawn(EntityEndermite.class, ConfigsHandler.BALANCE.endermiteRare, 0, 1, EnumCreatureType.MONSTER, Biomes.SKY);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "endlord"), EntityLord.class, "endlord", id++, EndReborn.instance, 64, 3, false, 461076, 681365);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "angry_enderman"), EntityAngryEnder.class, "angry_enderman", id++, EndReborn.instance, 64, 3, false, 461076, 660033);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "chronologist"), EntityChronologist.class, "chronologist", id++, EndReborn.instance, 64, 3, false, 461076, 13680725);

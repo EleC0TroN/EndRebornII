@@ -56,6 +56,7 @@ public class ItemInit
     public static final Item DEATH_ESSENCE = new ItemBase("death_essence");
     public static final Item ASH = new ItemBase("ash");
     public static final Item CATALYST = new ItemCatalyst("catalyst");
+    public static final Item END_IGNITER = new ItemFlintAndEnd("purpur_and_endorium");
     public static final Item RECORD = new ItemEndRecord("end_record", SoundHandler.THE_VOID);
 
     //Tools

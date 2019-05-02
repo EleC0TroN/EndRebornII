@@ -8,6 +8,9 @@ import endreborn.mod.entity.EntityWatcher;
 import endreborn.utils.EndForge;
 import endreborn.world.TeleporterEnd;
 import endreborn.world.TeleporterOver;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockFlower;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityDragon;
@@ -18,18 +21,18 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.management.PlayerList;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.*;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.living.LivingSpawnEvent;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Loader;
@@ -37,7 +40,10 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import org.apache.logging.log4j.core.pattern.AbstractStyleNameConverter;
+import scala.tools.nsc.interpreter.JavapClass;
 
+import java.util.Calendar;
 import java.util.Random;
 
 
@@ -171,7 +177,7 @@ public class EventHandler
 		EntityLivingBase entity = event.getEntityLiving();
 		if(entity instanceof EntityEnderman) {
 			if(entity.world.provider.getDimension() == 1 && entity.world.getDifficulty() != EnumDifficulty.PEACEFUL && !entity.world.isRemote) {
-				if(entity.getRNG().nextInt(50) == 1) {
+				if(entity.getRNG().nextInt(ConfigsHandler.BALANCE.watcherRare) == 1) {
 					EntityWatcher squid = new EntityWatcher(entity.world);
 					squid.copyLocationAndAnglesFrom(entity);
 					entity.world.spawnEntity(squid);
@@ -181,7 +187,7 @@ public class EventHandler
 		}
 		if(entity instanceof EntityEnderman) {
 			if(entity.world.provider.getDimension() == 1 && entity.world.getDifficulty() != EnumDifficulty.PEACEFUL && !entity.world.isRemote) {
-				if(entity.getRNG().nextInt(50) == 1) {
+				if(entity.getRNG().nextInt(ConfigsHandler.BALANCE.angryendRare) == 1) {
 					EntityAngryEnder squid1 = new EntityAngryEnder(entity.world);
 					squid1.copyLocationAndAnglesFrom(entity);
 					entity.world.spawnEntity(squid1);
@@ -241,6 +247,45 @@ public class EventHandler
 				}
 			}
 
+		}
+	}
+	public static boolean isDayI() {
+		Calendar calendar = Calendar.getInstance();
+		return calendar.get(Calendar.MONTH) == calendar.MAY && calendar.get(Calendar.DAY_OF_MONTH) == 10;
+	}
+	public static boolean isDayS() {
+		Calendar calendar = Calendar.getInstance();
+		return calendar.get(Calendar.MONTH) == calendar.AUGUST && calendar.get(Calendar.DAY_OF_MONTH) == 20;
+	}
+	public static boolean isDayB() {
+		Calendar calendar = Calendar.getInstance();
+		return calendar.get(Calendar.MONTH) == calendar.SEPTEMBER && calendar.get(Calendar.DAY_OF_MONTH) == 7;
+	}
+	@SubscribeEvent
+	public void onJoin(EntityJoinWorldEvent e)
+	{
+		if (e.getEntity() instanceof EntityPlayer && isDayI())
+		{
+			EntityPlayer player = (EntityPlayer) e.getEntity();
+			player.sendMessage(new TextComponentString("[End: Reborn] Hey, thanks for playing with my mod. Happy birthday to me."));
+		}
+	}
+	@SubscribeEvent
+	public void onJoin2(EntityJoinWorldEvent e)
+	{
+		if (e.getEntity() instanceof EntityPlayer && isDayS())
+		{
+			EntityPlayer player = (EntityPlayer) e.getEntity();
+			player.sendMessage(new TextComponentString("[End: Reborn] Just a very good day;)"));
+		}
+	}
+	@SubscribeEvent
+	public void onJoin3(EntityJoinWorldEvent e)
+	{
+		if (e.getEntity() instanceof EntityPlayer && isDayB())
+		{
+			EntityPlayer player = (EntityPlayer) e.getEntity();
+			player.sendMessage(new TextComponentString("[End: Reborn] Happy birthday to Lord."));
 		}
 	}
 }	

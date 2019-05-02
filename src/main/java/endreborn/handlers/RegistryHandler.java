@@ -4,7 +4,7 @@ import endreborn.EndReborn;
 import endreborn.init.BlockInit;
 import endreborn.init.EntitiesInit;
 import endreborn.init.ItemInit;
-import endreborn.utils.EndSound;
+import endreborn.init.PEntitiesInit;
 import endreborn.utils.IHasModel;
 import endreborn.world.OreGen;
 import endreborn.world.WorldGenCustomStructures;
@@ -20,7 +20,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
-import thaumcraft.api.aspects.AspectRegistryEvent;
 
 @EventBusSubscriber
 public class RegistryHandler 
@@ -65,12 +64,14 @@ public class RegistryHandler
 
 		SoundHandler.preInit();
     	EntitiesInit.init();
+		PEntitiesInit.initEntities();
     	TileHandler.registerTileEntities();
 		GameRegistry.registerWorldGenerator(new WorldGenCustomStructures(), 0);
     
 		if(event.getSide() == Side.CLIENT)
 		{
 			RenderHandler.registerEntityRenders();
+			PEntitiesInit.registerEntityRenderers();
 		}
 		
 	}

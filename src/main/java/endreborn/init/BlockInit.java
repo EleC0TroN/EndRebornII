@@ -36,14 +36,22 @@ public class BlockInit
 	public static final Block BLOCK_ASH = new BlockAsh("ash_block", Material.SAND);
 	public static final Block OVER_PORTAL = new BlockOverPortal("over_portal", Material.PORTAL);
 	public static final Block TECH_PORTAL = new BlockPillar("tech_portal", Material.ROCK);
-
+	public static final Block END_GLOW = new BlockEndBase("end_stone_glow", Material.ROCK);
+	public static final Block BRICKS_GLOW = new BlockEndBase("end_bricks_glow", Material.ROCK);
+	public static final Block SMOOTH_GLOW = new BlockEndBase("end_stone_glow_smooth", Material.ROCK);
+	public static final Block PILLAR_GLOW = new BlockPillar("end_stone_glow_pillar", Material.ROCK);
 	public static final Block BLOCK_E_USER = new BlockEntropyUser("entropy_user");
-	
+	public static final Block END_FIRE = new BlockEndFire("end_fire");
+
 	public static final Block STAIRS_END_BRICKS = new BlockStairsBase("e_end_bricks_stairs", Blocks.END_BRICKS);
 	public static final Block STAIRS_SMOOTH_END_STONE = new BlockStairsBase("smooth_end_stone_stairs", BlockInit.END_STONE_SMOOTH);
-	
+	public static final Block STAIRS_GLOW_BRICKS = new BlockStairsBase("end_bricks_glow_stairs", BlockInit.BRICKS_GLOW);
+	public static final Block STAIRS_SMOOTH_GLOW_STONE = new BlockStairsBase("end_stone_glow_smooth_stairs", BlockInit.SMOOTH_GLOW);
+
 	public static final Block WALL_END_BRICKS = new BlockWallBase("e_end_bricks_wall", Blocks.END_BRICKS);
 	public static final Block WALL_PURPUR = new BlockWallBase("e_purpur_wall", Blocks.PURPUR_BLOCK);
 	public static final Block WALL_SMOOTH_END_STONE = new BlockWallBase("smooth_end_stone_wall", BlockInit.END_STONE_SMOOTH);
-	
+	public static final Block WALL_GLOW_BRICKS = new BlockWallBase("end_bricks_glow_wall", BlockInit.BRICKS_GLOW);
+	public static final Block WALL_SMOOTH_GLOW_STONE = new BlockWallBase("end_stone_glow_smooth_wall", BlockInit.SMOOTH_GLOW);
+
 }
