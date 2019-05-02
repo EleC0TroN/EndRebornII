@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "endreborn:tech_portal" },
+        "axis=z":   { "model": "endreborn:tech_portal", "x": 90 },
+        "axis=x":   { "model": "endreborn:tech_portal", "x": 90, "y": 90 }
+    }
+}

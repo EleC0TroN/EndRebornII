@@ -1,0 +1,42 @@
+{
+"the_void": {
+    "sounds": [
+      {
+        "name": "endreborn:records/the_void",
+        "stream": true
+      }
+    ]
+  },
+"rage_1": {
+    "sounds": [
+      {
+        "name": "endreborn:lord/rage_1",
+        "stream": true
+      }
+    ]
+  },
+"rage_2": {
+    "sounds": [
+      {
+        "name": "endreborn:lord/rage_2",
+        "stream": true
+      }
+    ]
+  },
+"rage_3": {
+    "sounds": [
+      {
+        "name": "endreborn:lord/rage_3",
+        "stream": true
+      }
+    ]
+  },
+"rage_4": {
+    "sounds": [
+      {
+        "name": "endreborn:lord/rage_4",
+        "stream": true
+      }
+    ]
+  }
+}
