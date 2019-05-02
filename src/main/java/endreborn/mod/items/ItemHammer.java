@@ -6,12 +6,15 @@ import endreborn.utils.IHasModel;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import java.util.Random;
+
 public class ItemHammer extends Item implements IHasModel
 {
     public ItemHammer(String name)
     {
     	setUnlocalizedName(name);
     	setRegistryName(name);
+    	setMaxDamage(64);
     	setCreativeTab(EndReborn.endertab);
     	setMaxStackSize(1);
     	
@@ -23,13 +26,19 @@ public class ItemHammer extends Item implements IHasModel
     {
     	return true;
     }
-    
-    @Override
-    public ItemStack getContainerItem(ItemStack stack) 
-    {
-		return new ItemStack(ItemInit.HAMMER_IRON);
-        
-    }
+
+	@Override
+	public ItemStack getContainerItem(ItemStack itemStack) {
+
+		ItemStack container = itemStack.copy();
+		container.attemptDamageItem(2, new Random(), null);
+		return container;
+	}
+	@Override
+	public boolean isRepairable() {
+
+		return false;
+	}
     
 	@Override
 	public void registerModels() 

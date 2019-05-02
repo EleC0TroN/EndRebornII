@@ -22,10 +22,10 @@ public class ContainerEntropyUser extends Container
     {
         this.tileentity = tileentity;
 
-        this.addSlotToContainer(new Slot(tileentity, 0, 69, 14));
-        this.addSlotToContainer(new Slot(tileentity, 1, 91, 14));
+        this.addSlotToContainer(new Slot(tileentity, 0, 69, 43));
+        this.addSlotToContainer(new Slot(tileentity, 1, 91, 43));
         this.addSlotToContainer(new SlotEFuel(tileentity, 2, 35, 43));
-        this.addSlotToContainer(new SlotEOut(player.player, tileentity, 3, 141, 14));
+        this.addSlotToContainer(new SlotEOut(player.player, tileentity, 3, 141, 43));
 
         for(int y = 0; y < 3; y++)
         {

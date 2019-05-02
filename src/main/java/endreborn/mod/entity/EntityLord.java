@@ -3,6 +3,7 @@ package endreborn.mod.entity;
 import javax.annotation.Nullable;
 
 import endreborn.handlers.LootTableHandler;
+import endreborn.handlers.SoundHandler;
 import endreborn.utils.EndHelper;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
@@ -111,7 +112,6 @@ public class EntityLord extends EntityLordBase {
         super.initEntityAI();
         this.tasks.addTask(2, new EntityAIMoveTowardsTarget(this, 0.9D, 8.0F));
     }
-
     @Override
     protected void onDeathUpdate() {
         this.experienceValue = 100;
@@ -141,6 +141,7 @@ public class EntityLord extends EntityLordBase {
         Vec3d vec3d = new Vec3d(this.posX - p_70816_1_.posX, this.getEntityBoundingBox().minY + (double) (this.height / 2.0F) - p_70816_1_.posY + (double) p_70816_1_.getEyeHeight(), this.posZ - p_70816_1_.posZ);
         vec3d = vec3d.normalize();
         double d0 = 16.0D;
+        this.world.playSound(this.posX + 0.5D, this.posY + 0.5D, this.posZ + 0.5D, SoundEvents.ENTITY_ENDERMEN_TELEPORT, this.getSoundCategory(), 1.0F + this.rand.nextFloat(), this.rand.nextFloat() * 0.7F + 0.3F, false);
         double d1 = this.posX + (this.rand.nextDouble() - 0.5D) * 8.0D - vec3d.x * 16.0D;
         double d2 = this.posY + (double) (this.rand.nextInt(16) - 8) - vec3d.y * 16.0D;
         double d3 = this.posZ + (this.rand.nextDouble() - 0.5D) * 8.0D - vec3d.z * 16.0D;
@@ -164,6 +165,7 @@ public class EntityLord extends EntityLordBase {
         if (this.ticksExisted % 400 == 0) {
             if (this.getHealth() < 150 && this.getHealth() > 120) {
                 if (!world.isRemote) {
+                    this.playSound(SoundHandler.RAGE_1, 1.0F, 1.0F);
                     EndHelper.LordGroup(world, I18n.format("tile.ender_lord.rage_1"));
                 }
             }
@@ -171,6 +173,7 @@ public class EntityLord extends EntityLordBase {
         if (this.ticksExisted % 400 == 0) {
             if (this.getHealth() < 120 && this.getHealth() > 90) {
                 if (!world.isRemote) {
+                    this.playSound(SoundHandler.RAGE_2, 1.0F, 1.0F);
                     EndHelper.LordGroup(world, I18n.format("tile.ender_lord.rage_2"));
                 }
             }
@@ -178,6 +181,7 @@ public class EntityLord extends EntityLordBase {
         if (this.ticksExisted % 400 == 0) {
             if (this.getHealth() < 90 && this.getHealth() > 50) {
                 if (!world.isRemote) {
+                    this.playSound(SoundHandler.RAGE_3, 1.0F, 1.0F);
                     EndHelper.LordGroup(world, I18n.format("tile.ender_lord.rage_3"));
                 }
             }
@@ -185,6 +189,7 @@ public class EntityLord extends EntityLordBase {
         if (this.ticksExisted % 400 == 0) {
             if (this.getHealth() < 30 && this.getHealth() > 10) {
                 if (!world.isRemote) {
+                    this.playSound(SoundHandler.RAGE_4, 1.0F, 1.0F);
                     EndHelper.LordGroup(world, I18n.format("tile.ender_lord.rage_4"));
                 }
             }
@@ -195,7 +200,7 @@ public class EntityLord extends EntityLordBase {
                     world.removeEntity(entity);
                     if (entity.isDead)
                         EndHelper.LordGroup(world, I18n.format("tile.ender_lord.wither"));
-                    else
+
                         world.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, entity.posX + f, entity.posY + 2.0D + f1, entity.posZ + f2, 0.0D, 0.0D, 0.0D);
                 }
             }
@@ -222,7 +227,6 @@ public class EntityLord extends EntityLordBase {
 
         if (flag)
         {
-            this.world.playSound((EntityPlayer)null, this.prevPosX, this.prevPosY, this.prevPosZ, SoundEvents.ENTITY_ENDERMEN_TELEPORT, this.getSoundCategory(), 1.0F, 1.0F);
             this.playSound(SoundEvents.ENTITY_ENDERMEN_TELEPORT, 1.0F, 1.0F);
         }
 
