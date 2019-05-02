@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "00"    
+    ],
+    
+    "key":
+    {
+        "0":
+        {
+            "item": "endreborn:end_stone_glow"
+        }
+    },
+    
+    "result":
+    {
+        "item": "endreborn:end_bricks_glow",
+        "count": 2
+    }
+}

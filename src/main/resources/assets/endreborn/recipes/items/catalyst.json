@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:ender_pearl"
+      "item": "endreborn:item_shard_obsidian"
     },
-	{
-      "item": "minecraft:ender_pearl"
+    {
+      "item": "endreborn:item_shard_obsidian"
     },
     {
       "item": "endreborn:tool_hammer_iron",
@@ -14,7 +14,7 @@
   ],
   "result": 
     {
-        "item": "endreborn:item_raw_endorium",
-        "count": 1
+        "item": "endreborn:catalyst",
+        "count": 3
     }
 }

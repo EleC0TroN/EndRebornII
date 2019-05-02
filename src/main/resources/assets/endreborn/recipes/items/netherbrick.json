@@ -1,26 +1,15 @@
 {
-    "type": "minecraft:crafting_shaped",
-    
-    "pattern":
-    [
-        "1", 
-        "0"    
-    ],
-    
-    "key":
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
     {
-        "0":
-        {
-            "item": "minecraft:nether_brick"
-        },
-
-        "1":
-        {
-            "item": "endreborn:tool_hammer_iron"
-        }
+      "item": "minecraft:nether_brick"
     },
-    
-    "result":
+    {
+      "item": "endreborn:tool_hammer_iron",
+	  "data": 32767
+    }
+  ],
+  "result":
     {
         "item": "minecraft:netherbrick",
         "count": 4

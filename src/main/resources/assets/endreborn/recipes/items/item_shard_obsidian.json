@@ -1,26 +1,15 @@
 {
-    "type": "minecraft:crafting_shaped",
-    
-    "pattern":
-    [
-        "1", 
-        "0"    
-    ],
-    
-    "key":
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
     {
-        "0":
-        {
-            "item": "minecraft:obsidian"
-        },
-
-        "1":
-        {
-            "item": "endreborn:tool_hammer_iron"
-        }
+      "item": "minecraft:obsidian"
     },
-    
-    "result":
+    {
+      "item": "endreborn:tool_hammer_iron",
+	  "data": 32767
+    }
+  ],
+  "result": 
     {
         "item": "endreborn:item_shard_obsidian",
         "count": 3

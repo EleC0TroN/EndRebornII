@@ -4,7 +4,7 @@
     "pattern":
     [
         "222",
-	" 0 ", 
+	"303", 
         "101"     
     ],
     
@@ -21,6 +21,10 @@
 	"2":
         {
             "item": "endreborn:block_end_magma"
+        },
+	"3":
+        {
+            "item": "endreborn:death_essence"
         }
     },
     

@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "   ", 
+        "000",
+        "000"      
+    ],
+    
+    "key":
+    {
+        "0":
+        {
+            "item": "endreborn:end_bricks_glow"
+        }
+    },
+    
+    "result":
+    {
+        "item": "endreborn:end_bricks_glow_wall",
+        "count": 6
+    }
+}

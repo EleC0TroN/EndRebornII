@@ -1,26 +1,16 @@
 {
-    "type": "minecraft:crafting_shaped",
-    
-    "pattern":
-    [
-        "1", 
-        "0"    
-    ],
-    
-    "key":
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
     {
-        "0":
-        {
-            "item": "minecraft:quartz_block"
-        },
-
-        "1":
-        {
-            "item": "endreborn:tool_hammer_iron"
-        }
+      "item": "minecraft:quartz_block",
+	  "data": 0
     },
-    
-    "result":
+    {
+      "item": "endreborn:tool_hammer_iron",
+	  "data": 32767
+    }
+  ],
+  "result": 
     {
         "item": "minecraft:quartz",
         "count": 3

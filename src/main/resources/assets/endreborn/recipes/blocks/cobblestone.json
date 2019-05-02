@@ -31,7 +31,8 @@
 
         "1":
         {
-            "item": "endreborn:tool_hammer_iron"
+            "item": "endreborn:tool_hammer_iron",
+	    "data": 32767
         }
     },
     

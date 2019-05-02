@@ -19,6 +19,11 @@ item.item_world_mirror.name=World Mirror
 item.item_dragonite_tea.name=Dragonite Tea
 item.item_angel_feather.name=Angel Feather
 item.dragon_scales.name=Dragon Scales
+item.death_essence.name=Being Of Entropy 
+item.ash.name=Ash
+item.catalyst.name=Obsidian Dust
+item.end_record.name=End Record
+item.purpur_and_endorium.name=Purpur And Endorium
 
 # Blocks -
 tile.block_endorium.name=Endorium Block
@@ -42,6 +47,20 @@ tile.smooth_end_stone_wall.name=Smooth End Stone Wall
 tile.e_purpur_wall.name=Purpur Wall
 tile.block_end_magma.name=End Magma
 tile.block_end_forge.name=Void Forge
+tile.dragon_essence.name=Entropy Essence
+tile.ash_block.name=Ash
+tile.entropy_user.name=Materializer
+tile.tech_portal.name=Chiseled Purpur
+tile.over_portal.name=World Portal
+tile.end_stone_glow.name=Glow Endstone
+tile.end_bricks_glow.name=Glow Endstone Bricks
+tile.end_stone_glow_smooth.name=Glow Smooth Endstone
+tile.end_stone_glow_pillar.name=Glow Endstone Pillar
+tile.end_bricks_glow_stairs.name=Glow Endstone Bricks Stairs
+tile.end_stone_glow_smooth_stairs.name=Glow Smooth Endstone Bricks
+tile.end_bricks_glow_wall.name=Glow Endstone Bricks Wall
+tile.end_stone_glow_smooth_wall.name=Glow Smooth Endstone Wall
+tile.end_fire.name=Cold Fire
 
 # Tools -
 item.tool_axe_endorium.name=Endorium Axe
@@ -56,6 +75,7 @@ item.tool_hoe_wolframium.name=Wolframium Hoe
 item.tool_shovel_wolframium.name=Wolframium Shovel
 item.tool_hammer_iron.name=Sledgehammer
 item.tool_magnifier.name=Magnitifus
+item.entropy_wand.name=Wand Of Entropy
 
 #Armors
 item.armour_helmet_helmet.name=Obsidian Helmet
@@ -77,24 +97,47 @@ entity.endguard.name=End Guard
 entity.watcher.name=Watcher
 entity.endlord.name=End-Mage Barclay
 entity.angry_enderman.name=Angry Enderman
+entity.chronologist.name=Chronologist
+entity.end_fireball.name=Guard`s Fireball
 entity.Villager.endreborn.nether_explorer.name=Nether Explorer
 entity.Villager.endreborn.end_explorer.name=End Explorer
 entity.Villager.endreborn.overworld_explorer.name=World Explorer
 
+#Compat
+modifier.endorium.name=Rage
+modifier.endorium.desc=§oWhere is physics!?§r\nCritical strike increases hits rate.
+modifier.wolframium.name=Moon Voice
+modifier.wolframium.desc=§oIs anyone here?§r\nGives the effect of strength on a full moon.
+material.endorium.name=Endorium
+material.wolframium.name=Wolframium
+
 #Book
 item.endreborn.book.name=Book of The End
 info.endreborn.book.landing=Much time has passed since the time when I found The End. I begin to wonder if I saw everything, discovered and studied everything, I think it's time to set off to a new journey!
-
 info.endreborn.book.subtitle=Your discoveries
 
 #Enchants
 enchantment.shulker_core=Shulker Core
 enchantment.ender_core=Ender Core
+enchantment.ender_killer=Ender Killer
 
 #Other
 tile.ender_sword.tooltip=Right click to teleport
+tile.a_pearl.tooltip=No delay, and more stack
+tile.deather.tooltip=Magnet for entities
+tile.deather_mode.tooltip=Magnet mode
+tile.deather_mode.off=Pulling
+tile.deather_mode.on=Repulsion
+tile.mirror.tooltip_0=Teleports to zero coordinates
+tile.mirror.tooltip_1=We are not responsible for the consequences
+tile.soup.tooltip=Strange effect on the body, but tasty
+tile.flesh.tooltip=A delicacy that improves eyesight
+tile.dragon_essence.tooltip=The rift of a world that is slowly growing
+tile.essence.tooltip=Substance appearing among obsidian
+tile.user.tooltip=Suspicious mechanism
 tile.block_rune.tooltip=Maybe try to surround with purple blocks...
 tile.block_forge.tooltip=Can melt the ores, if put on it
+tile.wand.tooltip=Changes blocks to their destroyed state
 tile.ender_lord.rage_1=You... Are you still fighting?
 tile.ender_lord.rage_2=Are you trying to kill everyone?
 tile.ender_lord.rage_3=You know nothing!
@@ -102,6 +145,60 @@ tile.ender_lord.rage_4=To rise you need to fall!
 tile.ender_lord.wither=You can not compare the creation and creator!
 tile.ender_lord.lord=This is not fair now!
 tile.ender_lord.rage_5=Do you read this?
+tile.ender_lord.name=Lord
+tile.catalyst.tooltip=Works as a catalyst
+container.entropy_user=Materializer
+item.endreborn.record.end.desc=Yozhh - The Void
+
+#Banners
+item.banner.endreborn_rune.white=White Rune 
+item.banner.endreborn_rune.black=Black Rune 
+item.banner.endreborn_rune.blue=Blue Rune 
+item.banner.endreborn_rune.red=Red Rune 
+item.banner.endreborn_rune.gray=Brown Rune 
+item.banner.endreborn_rune.yellow=Yellow Rune 
+item.banner.endreborn_rune.gray=Gray Rune 
+item.banner.endreborn_rune.silver=Light Gray Rune 
+item.banner.endreborn_rune.purple=Purple Rune 
+item.banner.endreborn_rune.cyan=Cyan Rune 
+item.banner.endreborn_rune.pink=Pink Rune 
+item.banner.endreborn_rune.green=Green Rune 
+item.banner.endreborn_rune.lime=Lime Rune
+item.banner.endreborn_rune.lightBlue=Light Blue Rune  
+item.banner.endreborn_rune.magenta=Magenta Rune  
+item.banner.endreborn_rune.orange=Orange Rune 
+item.banner.endreborn_end.white=White Symbol
+item.banner.endreborn_end.black=Black Symbol
+item.banner.endreborn_end.blue=Blue Symbol
+item.banner.endreborn_end.red=Red Symbol
+item.banner.endreborn_end.gray=Brown Symbol
+item.banner.endreborn_end.yellow=Yellow Symbol
+item.banner.endreborn_end.gray=Gray Symbol
+item.banner.endreborn_end.silver=Light Gray Symbol
+item.banner.endreborn_end.purple=Purple Symbol
+item.banner.endreborn_end.cyan=Cyan Symbol
+item.banner.endreborn_end.pink=Pink Symbol
+item.banner.endreborn_end.green=Green Symbol
+item.banner.endreborn_end.lime=Lime Symbol
+item.banner.endreborn_end.lightBlue=Light Blue Symbol 
+item.banner.endreborn_end.magenta=Magenta Symbol 
+item.banner.endreborn_end.orange=Orange Symbol
+item.banner.endreborn_pearl.white=White Pearl
+item.banner.endreborn_pearl.black=Black Pearl
+item.banner.endreborn_pearl.blue=Blue Pearl
+item.banner.endreborn_pearl.red=Red Pearl
+item.banner.endreborn_pearl.gray=Brown Pearl
+item.banner.endreborn_pearl.yellow=Yellow Pearl
+item.banner.endreborn_pearl.gray=Gray Pearl
+item.banner.endreborn_pearl.silver=Light Gray Pearl
+item.banner.endreborn_pearl.purple=Purple Pearl
+item.banner.endreborn_pearl.cyan=Cyan Pearl
+item.banner.endreborn_pearl.pink=Pink Pearl
+item.banner.endreborn_pearl.green=Green Pearl
+item.banner.endreborn_pearl.lime=Lime Pearl
+item.banner.endreborn_pearl.lightBlue=Light Blue Pearl 
+item.banner.endreborn_pearl.magenta=Magenta Pearl 
+item.banner.endreborn_pearl.orange=Orange Pearl
 
 #Advancements 
 advancements.endreborn.root.title=End: Reborn
@@ -116,10 +213,10 @@ advancements.endreborn.raw_endorium.description=Create: Endorium
 advancements.endreborn.crop_ender_flower.title=Mutation
 advancements.endreborn.crop_ender_flower.description=Create: Ender`s Flower
 
-advancements.endreborn.obsidian_armor.title=I'm Tanking !
+advancements.endreborn.obsidian_armor.title=I'm Tanking!
 advancements.endreborn.obsidian_armor.description=Wear: Obsidian Armor
 
-advancements.endreborn.endermen_curse.title=You're an Killer...
+advancements.endreborn.endermen_curse.title=You're killer...
 advancements.endreborn.endermen_curse.description=Create: Endorium Sword
 
 advancements.endreborn.ender_flesh.title=Delicacy
@@ -160,3 +257,9 @@ advancements.endreborn.end_forge.description=Create: Void Forge
 
 advancements.endreborn.dragon_scales.title=EleC0TroN`s shard
 advancements.endreborn.dragon_scales.description=Get: Dragon Scales
+
+advancements.endreborn.entropy.title=Upgrade with destroying
+advancements.endreborn.entropy.description=Get: Being Of Entropy 
+
+advancements.endreborn.entropy_user.title=Better not to touch
+advancements.endreborn.entropy_user.description=Get: Materializer
