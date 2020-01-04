@@ -23,7 +23,6 @@ public class EntityEndFireball extends EntityFireball {
         this.setSize(0.3125F, 0.3125F);
     }
 
-    @SideOnly(Side.CLIENT)
     public EntityEndFireball(World worldIn, EntityLivingBase shooter, double accelX, double accelY, double accelZ) {
         super(worldIn, shooter, accelX, accelY, accelZ);
         this.setSize(0.3125F, 0.3125F);
