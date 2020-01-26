@@ -11,6 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
@@ -69,19 +70,15 @@ public class EndHelper
 	    {
 	        return player.isCreative() ? stack : consumeItem(stack, amount);
 	    }
+
 	public static void LordGroup(World world, String text){
-		customGroup(world, I18n.format("tile.ender_lord.name"), text);
-	}
-	public static void LordText(String text){
-		customText(I18n.format("tile.ender_lord.name"), text);
-	}
-	public static void customText(String name, String text){
-		FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(new TextComponentString(name + ": " + text));
-	}
-	public static void customGroup(World world, String name, String text){
-		List<EntityPlayer> players = world.playerEntities;
-		for(EntityPlayer player : players)
-			player.sendMessage(new TextComponentString(name + ": " + text));
+		customGroup(world, text);
 	}
 
+	public static void customGroup(World world, String text){
+		List<EntityPlayer> players = world.playerEntities;
+
+		for(EntityPlayer player : players)
+			player.sendMessage(new TextComponentTranslation(text));
+	}
 }
