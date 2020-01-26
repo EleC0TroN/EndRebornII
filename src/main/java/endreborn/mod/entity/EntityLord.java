@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 import endreborn.handlers.LootTableHandler;
 import endreborn.handlers.SoundHandler;
 import endreborn.utils.EndHelper;
-import net.minecraft.client.resources.I18n;
+// import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -118,6 +118,7 @@ public class EntityLord extends EntityLordBase {
         world.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX, this.posY, this.posZ, 2.0F, 2.0F, 2.0F, null);
         this.setDead();
         if (!world.isRemote) {
+            EndHelper.LordGroup(world, "tile.ender_lord.lord");
             EntityEnderman ender = new EntityEnderman(world);
             ender.setLocationAndAngles(this.posX, this.posY + 1, this.posZ, this.rotationYaw, this.rotationPitch);
             this.world.spawnEntity(ender);
@@ -164,59 +165,57 @@ public class EntityLord extends EntityLordBase {
         }
         if (this.ticksExisted % 400 == 0) {
             if (this.getHealth() < 150 && this.getHealth() > 120) {
-                if (!world.isRemote) {
+                //TODO: Fix sound not playing on server.
+                if (!world.isRemote)
                     this.playSound(SoundHandler.RAGE_1, 1.0F, 1.0F);
-                    EndHelper.LordGroup(world, I18n.format("tile.ender_lord.rage_1"));
-                }
+                EndHelper.LordGroup(world,"tile.ender_lord.rage_1");
             }
         }
         if (this.ticksExisted % 400 == 0) {
             if (this.getHealth() < 120 && this.getHealth() > 90) {
-                if (!world.isRemote) {
+                //TODO: Fix sound not playing on server.
+                if (!world.isRemote)
                     this.playSound(SoundHandler.RAGE_2, 1.0F, 1.0F);
-                    EndHelper.LordGroup(world, I18n.format("tile.ender_lord.rage_2"));
-                }
+                EndHelper.LordGroup(world,"tile.ender_lord.rage_2");
             }
         }
         if (this.ticksExisted % 400 == 0) {
             if (this.getHealth() < 90 && this.getHealth() > 50) {
-                if (!world.isRemote) {
+                //TODO: Fix sound not playing on server.
+                if (!world.isRemote)
                     this.playSound(SoundHandler.RAGE_3, 1.0F, 1.0F);
-                    EndHelper.LordGroup(world, I18n.format("tile.ender_lord.rage_3"));
-                }
+                EndHelper.LordGroup(world,"tile.ender_lord.rage_3");
             }
         }
         if (this.ticksExisted % 400 == 0) {
             if (this.getHealth() < 30 && this.getHealth() > 10) {
-                if (!world.isRemote) {
+                //TODO: Fix sound not playing on server.
+                if (!world.isRemote)
                     this.playSound(SoundHandler.RAGE_4, 1.0F, 1.0F);
-                    EndHelper.LordGroup(world, I18n.format("tile.ender_lord.rage_4"));
-                }
+                EndHelper.LordGroup(world, "tile.ender_lord.rage_4");
             }
         }
-        for (Entity entity : world.getEntitiesWithinAABBExcludingEntity(this, getEntityBoundingBox().grow(64.0D, 64.0D, 64.0D)))
+        for (Entity entity : world.getEntitiesWithinAABBExcludingEntity(this, getEntityBoundingBox().grow(64.0D, 64.0D, 64.0D))) {
             if (entity instanceof EntityWither) {
                 if (!world.isRemote) {
                     world.removeEntity(entity);
-                    if (entity.isDead)
-                        EndHelper.LordGroup(world, I18n.format("tile.ender_lord.wither"));
-
-                        world.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, entity.posX + f, entity.posY + 2.0D + f1, entity.posZ + f2, 0.0D, 0.0D, 0.0D);
+                    world.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, entity.posX + f, entity.posY + 2.0D + f1, entity.posZ + f2, 0.0D, 0.0D, 0.0D);
                 }
+
+                EndHelper.LordGroup(world, "tile.ender_lord.wither");
             }
-        for (Entity entity : world.getEntitiesWithinAABBExcludingEntity(this, getEntityBoundingBox().grow(64.0D, 64.0D, 64.0D)))
+        }
+
+        for (Entity entity : world.getEntitiesWithinAABBExcludingEntity(this, getEntityBoundingBox().grow(64.0D, 64.0D, 64.0D))) {
             if (entity instanceof EntityLord) {
                 if (!world.isRemote) {
                     world.removeEntity(entity);
-                    if (entity.isDead)
-                        EndHelper.LordGroup(world, I18n.format("tile.ender_lord.lord"));
-                 else
-                    world.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, entity.posX + f, entity.posY + 2.0D + f1, entity.posZ + f2, 0.0D, 0.0D, 0.0D);
+
+                    if (!entity.isDead)
+                        world.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, entity.posX + f, entity.posY + 2.0D + f1, entity.posZ + f2, 0.0D, 0.0D, 0.0D);
+                }
             }
-
-    }
-
-
+        }
 		this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
     }
     private boolean teleportTo(double x, double y, double z)
